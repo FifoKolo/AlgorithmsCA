@@ -8,6 +8,19 @@ package algorithmsca;
  *
  * @author mncrf
  */
-public class LLInterface {
-    
+public interface LLInterface {
+
+    public void add(int iPosition, Object theElement);
+
+    public void add(Object theElement);
+
+    public Object get(int iPosition);
+
+    public void remove(int iPosition);
+
+    public boolean isEmpty();
+
+    public int size();
+
+    public void printList();
 }

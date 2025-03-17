@@ -15,6 +15,8 @@ public class AlgorithmsCA {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Register patient =new Register();
+        patient.setVisible(true);
     }
     
 }

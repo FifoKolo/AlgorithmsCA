@@ -8,6 +8,16 @@ package algorithmsca;
  *
  * @author mncrf
  */
-public class QueueInterface {
+public interface QueueInterface<T> {  //T= type
+
+    public boolean isEmpty();
+
+    public int size();
+
+    public Object frontElement();
+
+    void enqueue(T item);
     
+    T dequeue();
 }
+
