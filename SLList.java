@@ -36,10 +36,10 @@ public class SLList implements LLInterface {
         return iSize;
     }
 
-    //add an element to the list, assume the iPosition is in the correct range
+    
     @Override
     public void add(int iPosition, Object theElement) {
-        //special case of adding at the head of the list (on the first position)
+        
         if (iPosition == 1) {
             SlNode newNode = new SlNode(theElement, head);
             head = newNode;
@@ -48,11 +48,11 @@ public class SLList implements LLInterface {
             SlNode newNode = new SlNode(theElement, currNode);
             prevNode.setNext(newNode);
         }
-        //as a new one was added the size counter must be incremented by 1
+        
         iSize = iSize + 1;
     }
 
-    //add an element at the end of the list (on the last position)
+    
     @Override
     public void add(Object theElement) {
         SlNode newNode = new SlNode(theElement, null);

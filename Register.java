@@ -13,14 +13,14 @@ import javax.swing.JOptionPane;
  */
 public class Register extends javax.swing.JFrame {
     private MyQ priorityQueue;
-    private SLList noShows;
+ 
     /**
      * Creates new form Register
      */
     public Register() {
         initComponents();
         priorityQueue = new MyQ();
-        noShows = new SLList();
+
     }
 
     /**
@@ -204,7 +204,7 @@ public class Register extends javax.swing.JFrame {
             }
 
 String bloodType = (String) bloodTypeCombo.getSelectedItem();
-            if (bloodType == null) bloodType = "A"; // Default to A+ if somehow null
+            if (bloodType == null) bloodType = "A"; // Default to A+ if null
             
             String priorityStr = urgentTxt.getText().trim();
             if (priorityStr.isEmpty()) {
@@ -230,7 +230,7 @@ String bloodType = (String) bloodTypeCombo.getSelectedItem();
             ageTxt.setText("");
             // Reset bloodTypeCombo to default (A+)
             bloodTypeCombo.setSelectedIndex(0);
-            updateDisplay(); //// Update text area after adding patient
+            updateDisplay(); // Update text area after adding patient
        
            
             
@@ -275,7 +275,7 @@ String bloodType = (String) bloodTypeCombo.getSelectedItem();
 
 // Recursive method to count patients 
 private int countUrgent(ArrayList<Patient> patients, int index) {
-        if (index >= patients.size()) return 0; // Base case
+        if (index >= patients.size()) return 0; 
         int count = (patients.get(index).getPriorityValue() == 3) ? 1 : 0; // Urgent = 3
         return count + countUrgent(patients, index + 1); // Recursive call
     }
@@ -284,7 +284,7 @@ private int countUrgent(ArrayList<Patient> patients, int index) {
         results.setText(getQueueStatus());
     }
 
-    //format queue and no-shows status
+    //format queue 
 private String getQueueStatus() {
         StringBuilder sb = new StringBuilder();
         sb.append("Patients in Queue (").append(priorityQueue.size()).append("):\n");

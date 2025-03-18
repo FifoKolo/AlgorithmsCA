@@ -21,7 +21,7 @@ public class MyQ implements QueueInterface<Patient> {
 
     @Override
     public void enqueue(Patient patient) {
-        // Insert in priority order
+        // priority order
         int index = 0;
         while (index < theQueue.size() && patient.compareTo(theQueue.get(index)) >= 0) {
             index++;
@@ -49,8 +49,8 @@ public class MyQ implements QueueInterface<Patient> {
         return new ArrayList<>(theQueue); // Return a copy to protect encapsulation
     }
 
-    // Optional method (not in QueueInterface)
-    public Patient frontElement() { // Changed to return Patient, not Object
+    
+    public Patient frontElement() { 
         if (theQueue.size() > 0) {
             return theQueue.get(0);
         } else {

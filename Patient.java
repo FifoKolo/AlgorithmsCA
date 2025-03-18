@@ -47,6 +47,6 @@ public class Patient implements Comparable<Patient> {
     // Getters
     public String getName() { return name; }
     public String getGpDetails() { return gpDetails; }
-    public int getAge() { return age; } // Added for completeness
-    public String getBloodType() { return bloodType; } // New getter
+    public int getAge() { return age; } 
+    public String getBloodType() { return bloodType; } 
 }
