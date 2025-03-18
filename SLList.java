@@ -109,14 +109,5 @@ public class SLList implements LLInterface {
         System.out.print(sb.toString()); // Keep for debugging, optional
     }
 
-    // New method to get no-shows as a string
-    public String getNoShows() {
-        SlNode tempNode = head;
-        StringBuilder sb = new StringBuilder();
-        while (tempNode != null) {
-            sb.append(tempNode.toString()).append("\n");
-            tempNode = tempNode.getNext();
-        }
-        return sb.toString();
-    }
+   
 }

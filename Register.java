@@ -44,8 +44,10 @@ public class Register extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         nameTxt = new javax.swing.JTextField();
         ageTxt = new javax.swing.JTextField();
-        priorityTxt = new javax.swing.JTextField();
         gpTxt = new javax.swing.JTextField();
+        bloodTypeCombo = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        urgentTxt = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,7 +57,7 @@ public class Register extends javax.swing.JFrame {
 
         jLabel3.setText("Enter Age:");
 
-        jLabel4.setText("Enter Priority(1-3, Low-High): ");
+        jLabel4.setText("Enter Blood Type:: ");
 
         jLabel5.setText("Enter GP:");
 
@@ -89,17 +91,20 @@ public class Register extends javax.swing.JFrame {
             }
         });
 
-        priorityTxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                priorityTxtActionPerformed(evt);
-            }
-        });
-
         gpTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 gpTxtActionPerformed(evt);
             }
         });
+
+        bloodTypeCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Type A", "Type B", "Type O" }));
+        bloodTypeCombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bloodTypeComboActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("Enter Urgency Lvl:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -117,25 +122,30 @@ public class Register extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel2)
-                                                    .addComponent(jLabel3))
-                                                .addGap(18, 18, 18)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(nameTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE)
-                                                    .addComponent(ageTxt)))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel4)
-                                                .addGap(17, 17, 17)
-                                                .addComponent(priorityTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(jLabel2)
+                                            .addComponent(jLabel3))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(nameTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE)
+                                            .addComponent(ageTxt))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
                                         .addComponent(jLabel6))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(9, 9, 9)
-                                        .addComponent(patientBtn)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(nextPatient)))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(9, 9, 9)
+                                                .addComponent(patientBtn)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(nextPatient))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jLabel4)
+                                                    .addComponent(jLabel7))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(bloodTypeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(urgentTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addGap(0, 0, Short.MAX_VALUE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -162,19 +172,23 @@ public class Register extends javax.swing.JFrame {
                             .addComponent(jLabel3)
                             .addComponent(ageTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(priorityTxt)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bloodTypeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(12, 12, 12)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(urgentTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
                             .addComponent(gpTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(48, 48, 48)
+                        .addGap(21, 21, 21)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(patientBtn)
                             .addComponent(nextPatient)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         pack();
@@ -189,20 +203,34 @@ public class Register extends javax.swing.JFrame {
                 return;
             }
 
-            String priority = priorityTxt.getText().trim();
-            if (priority.isEmpty()) priority = "low";
-
+String bloodType = (String) bloodTypeCombo.getSelectedItem();
+            if (bloodType == null) bloodType = "A"; // Default to A+ if somehow null
+            
+            String priorityStr = urgentTxt.getText().trim();
+            if (priorityStr.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Priority cannot be empty! Enter 1-3.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            
             String gpDetails = gpTxt.getText().trim();
             if (gpDetails.isEmpty()) gpDetails = "Unknown";
+            
+            int priority = Integer.parseInt(priorityStr);
+            if (priority < 1 || priority > 3) {
+                JOptionPane.showMessageDialog(this, "Priority must be between 1 and 3!", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
 
             int age = Integer.parseInt(ageTxt.getText().trim());
-            Patient patient = new Patient(name, priority, gpDetails, age);
+            Patient patient = new Patient(name, bloodType, priority, gpDetails, age);
             priorityQueue.enqueue(patient);
             nameTxt.setText("");
-            priorityTxt.setText("");
+            urgentTxt.setText("");
             gpTxt.setText("");
             ageTxt.setText("");
-            updateDisplay(); // Update text area after adding patient
+            // Reset bloodTypeCombo to default (A+)
+            bloodTypeCombo.setSelectedIndex(0);
+            updateDisplay(); //// Update text area after adding patient
        
            
             
@@ -220,11 +248,6 @@ public class Register extends javax.swing.JFrame {
       
     }//GEN-LAST:event_ageTxtActionPerformed
 
-    private void priorityTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_priorityTxtActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_priorityTxtActionPerformed
-
     private void gpTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gpTxtActionPerformed
         // TODO add your handling code here:
      
@@ -232,38 +255,45 @@ public class Register extends javax.swing.JFrame {
 
     private void nextPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextPatientActionPerformed
         // TODO add your handling code here:
-       if (priorityQueue.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "No patients in queue!", "Info", JOptionPane.INFORMATION_MESSAGE);
-            return;
-        }
-        Patient next = priorityQueue.dequeue();
-        System.out.println("Dequeued patient: " + next); // Debug
-        int urgentCount = countUrgent(new ArrayList<>(priorityQueue.getQueue()), 0);
-        System.out.println("Urgent count: " + urgentCount); // Debug
+      Patient next = priorityQueue.dequeue();
+            int urgentCount = countUrgent(new ArrayList<>(priorityQueue.getQueue()), 0);
+            // Redirect debug output to text area
+            StringBuilder sb = new StringBuilder();
+            sb.append("Dequeued patient: ").append(next).append("\n");
+            sb.append("Urgent count: ").append(urgentCount).append("\n");
+            sb.append("Processed: ").append(next).append("\n");
+            sb.append("Urgent patients remaining: ").append(urgentCount).append("\n\n");
+            sb.append(getQueueStatus());
+            results.setText(sb.toString());
+            results.repaint(); // Force UI update
         
     }//GEN-LAST:event_nextPatientActionPerformed
-    // Recursive method to count urgent patients
-  private int countUrgent(ArrayList<Patient> patients, int index) {
+
+    private void bloodTypeComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bloodTypeComboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bloodTypeComboActionPerformed
+
+// Recursive method to count patients 
+private int countUrgent(ArrayList<Patient> patients, int index) {
         if (index >= patients.size()) return 0; // Base case
         int count = (patients.get(index).getPriorityValue() == 3) ? 1 : 0; // Urgent = 3
         return count + countUrgent(patients, index + 1); // Recursive call
     }
-
-    // Helper to update display
+    //update display
     private void updateDisplay() {
         results.setText(getQueueStatus());
     }
 
-    // Helper to format queue and no-shows status
-    private String getQueueStatus() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("Patients in Queue (").append(priorityQueue.size()).append("):\n");
-    ArrayList<Patient> queueCopy = priorityQueue.getQueue();
-    for (Patient p : queueCopy) {
-        sb.append(p).append("\n");
-    }
-    sb.append("\nLast 5 No-Shows:\n").append(noShows.getNoShows());
-    return sb.toString();
+    //format queue and no-shows status
+private String getQueueStatus() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Patients in Queue (").append(priorityQueue.size()).append("):\n");
+        ArrayList<Patient> queueCopy = priorityQueue.getQueue();
+        for (Patient p : queueCopy) {
+            sb.append(p).append("\n");
+        }
+        return sb.toString();
+    
 }
     /**
      * @param args the command line arguments
@@ -302,6 +332,7 @@ public class Register extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ageTxt;
+    private javax.swing.JComboBox<String> bloodTypeCombo;
     private javax.swing.JTextField gpTxt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -309,11 +340,12 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField nameTxt;
     private javax.swing.JButton nextPatient;
     private javax.swing.JButton patientBtn;
-    private javax.swing.JTextField priorityTxt;
     private javax.swing.JTextArea results;
+    private javax.swing.JTextField urgentTxt;
     // End of variables declaration//GEN-END:variables
 }
